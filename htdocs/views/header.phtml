@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Data Phone Auto</title>
+		<link rel="icon" type="image/png" href="../../images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../../design/style.css" charset="utf-8"/>
+		<link rel="stylesheet" media="all" type="text/css" href="../../design/menu_style.css" charset="utf-8"/>
+		<link rel="stylesheet" media="all" type="text/css" href="../../design/sub_menu_style.css" charset="utf-8"/>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="../../script/script.js"></script> 
+		<script type="text/javascript">
+		var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  
+    		if (mobile)
+	{
+		document.location = "http://dataphoneauto.ece.fr/views/mobile/index.phtml";
+        		 
+    	}  
+		</script>
+	</head>
+	<body id="">
+		<div id="header">
+			<!-- LOGO -->
+			<div id="logo">
+				<p id="plogo">
+				<a  href="http://www.opensource.org/" target=_blank><img id="logoOS" src="../../images/open.png" alt="1232" width="6%" /></a>
+				<a  href="../index"><img id="logoImg" src="../../images/logo.png" alt="1232" /></a>
+				<a  href="http://www.ece.fr/" target=_blank><img id="logoECE" src="../../images/Logo_ECE.jpg" alt="1232" width="12%" /></a>
+				</p>
+			</div>
+			<!-- FIN LOGO -->
+			<div id="clear"></div>
+<!-- NE PAS TOUCHER AU CSS -->
+			<!-- MENU -->
+			<div class="menu bubplastic horizontal lime">
+				<ul class="baliseul">
+					<li><span class="menu menu_r"><a href="../index"><span class="menu menu_ar">Accueil</span></a></span></li>
+					<li class="menu menu_r"><span class="menu menu_r"><a href="../index/introduction"><span class="menu_ar">Pr&eacute;sentation</span></a></span></li>
+				<?php
+					if (isset($_SESSION['connected']) || ($_SESSION['connected'] == true)) {
+				?>	
+					<li><span class="menu menu_r"><a href="../members/signout"><span class="menu menu_ar">D&eacute;connexion</span></a></span></li>
+					<li><span class="menu menu_r"><a href="../profile/index"><span class="menu menu_ar">Profil</span></a></span></li>
+					<li><span class="menu menu_r"><a href="../profile/cars"><span class="menu menu_ar">Vos voitures</span></a></span></li>
+				<?php	}
+					else {
+				?>
+					<li><span class="menu menu_r"><a href="../members/signup"><span class="menu menu_ar">Inscription</span></a></span></li>
+					<li><span class="menu menu_r"><a href="../members/signin"><span class="menu menu_ar">Connexion</span></a></span></li>
+				<?php	}
+				?>
+					<li><span class="menu menu_r"><a href="../index/team"><span class="menu menu_ar">L'&eacute;quipe</span></a></span></li>
+					<li><span class="menu menu_r"><a href="../index/contact"><span class="menu menu_ar">Contact</span></a></span></li>
+				</ul>
+				<br class="menu clearit" />
+			</div>
+			<!-- FIN MENU -->
+			<div class="clear"></div>
+		</div>
+<!-- FIN NE PAS TOUCHER AU CSS -->

@@ -1,0 +1,52 @@
+	<div id="">
+		<h1><?php echo $title; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<?php	if (isset($_SESSION['connected'])) { ?>
+		<div id="profile">
+			<?php require_once 'subMenu.phtml'; ?>
+			<div id="profile-delete">
+				<?php
+					if (isset($_POST['car'])) {
+				?>
+				<p id="profile-delete-succes">Voiture supprim&eacute;e avec succ&egrave;s !</p><br />
+				<?php
+					}
+				?>
+				<form method="post" action="delete">
+					<table class="">
+						<tr>
+							<?php	if(sizeof($cars) > 0) { ?>
+							<td><label>Selectionnez la voiture que vous desirez supprimer :</label></td>
+							<td><select name="car">
+								<?php foreach ($cars as $car) { ?>
+								<option value="<?php echo $car['idVoiture']; ?>"><?php echo $car['idVoiture']; ?></option>
+								<?php } ?>
+							</select></td>
+							<?php	}
+								else {
+							?>
+							<td><label>Vous ne possedez pas de voiture.</label></td>
+							<?php	} ?>
+						</tr>
+					</table>
+					<table class="">
+						<tr>
+							<td><input id="" class="" type="submit" value="Supprimer" /></td>
+						</tr>
+					</table>			
+				</form>
+			</div>
+		<?php
+			}
+			else {
+		?>
+			<p>Vous devez etre connecte pour acceder a cette page.</p>
+			<p>Vous serez redirige dans 5 secondes ...</p>
+			<img id="disconnect" src='../../images/deco.gif' />
+		<?php
+			}
+		?>
+		</div>
+	</div>

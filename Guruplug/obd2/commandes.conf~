@@ -1,0 +1,36 @@
+# Permet d'activer ou non les commandes à envoyer à l'ELM327
+# Respecter la mise en forme
+#   0 : ne pas envoyer
+#   1 : envoyer
+
+# Commande ELM327
+AT Z    = 1 ; Initialisation
+AT I    = 1 ; Initialisation
+AT SP 0 = 0 ; Choix automatique du protocole de la voiture
+AT DP   = 0 ; voir le protocole choisis
+AT @1   = 0 ; Identifiant de l'ELM327
+
+# Mode 1 et 2 Lecture PIDs supportes
+01 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+#01 20   = 1 ; Liste des PIDs supportes (plage de 33 a 64)
+#01 40   = 1 ; Liste des PIDs supportes (plage de 65 a 96)
+#01 60   = 1 ; Liste des PIDs supportes (plage de 97 a 128)
+#01 80   = 1 ; Liste des PIDs supportes (plage de 129 a 160)
+
+02 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+03 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+04 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+# Mode 5 Lecture PIDs supportes
+05 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+
+# Mode 6 Lecture PIDs supportes
+06 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+#06 20   = 1 ; Liste des PIDs supportes (plage de 33 a 64)
+#06 40   = 1 ; Liste des PIDs supportes (plage de 65 a 96)
+#06 60   = 1 ; Liste des PIDs supportes (plage de 97 a 128)
+#06 80   = 0 ; Liste des PIDs supportes (plage de 129 a 160)
+
+# Mode 9 Lecture PIDs supportes
+09 00   = 1 ; Liste des PIDs supportes (plage de 01 a 32)
+
+

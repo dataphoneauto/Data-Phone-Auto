@@ -1,0 +1,191 @@
+.subMenu.clearit {
+	margin: 0;
+	padding: 0;
+	height: 0;
+	clear: both;
+}
+
+/* BUBBLE PLASTIC vertical MENU */
+
+.subMenu.bubplastic.vertical {
+	width: 100%;
+	height: 27px;
+	margin: 0;
+	padding: 0;
+	background: #000000 url(../../images/subMenu/bg-bubplastic.gif) top left repeat-x;
+}
+.subMenu.bubplastic.vertical ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.subMenu.bubplastic.vertical ul li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top left no-repeat;
+}
+
+.subMenu.bubplastic.vertical ul li a {
+	display: block;
+	height: 27px;
+	padding-left: 5px;
+	float: left;
+	text-transform: uppercase;
+	font: 12pt/1.5em Calibri, Trebuchet MS, inherit, Arial;
+	font-weight: bold;
+	font-size: 70%;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.subMenu.bubplastic.vertical ul li a span.menu_ar {
+	display: block;
+	float: left;
+	height: 22px;
+	padding-top: 5px;
+	padding-right: 10px;
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top right no-repeat;
+	cursor: pointer;
+}
+/* END BUBBLE PLASTIC vertical MENU */
+
+
+
+/* BUBBLE PLASTIC VERTICAL MENU */
+
+.subMenu.bubplastic.vertical {
+	width: 160px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+.subMenu.bubplastic.vertical ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.subMenu.bubplastic.vertical ul li {
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top left no-repeat;
+}
+
+.subMenu.bubplastic.vertical ul li a {
+	display: block;
+	margin: 0;
+	width: 100%;
+	padding-left: 30px;
+	text-transform: uppercase;
+	font-family: "Helvetica Neue",helvetica,"microsoft sans serif",arial,sans-serif;
+	font-size: 70%;
+	color: #FFFFFF;
+	text-decoration: none;
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top left no-repeat;
+}
+
+.subMenu.bubplastic.vertical ul li a span.menu_ar {
+	display: block;
+	margin: 0;
+	width: 100%;
+	height: 22px;
+	padding-top: 5px;
+	padding-right: 30px;
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top right no-repeat;
+	cursor: pointer;
+}
+/* END BUBBLE PLASTIC VERTICAL MENU */
+
+
+
+/* AQUA HOVER */
+.subMenu.bubplastic.aqua ul li a:hover,
+.subMenu.bubplastic.aqua ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-aqua.gif) top left no-repeat;
+}
+.subMenu.bubplastic.aqua ul li a:hover span.menu_ar,
+.subMenu.bubplastic.aqua ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-aqua.gif) top right no-repeat;
+}
+
+
+/* BLUE HOVER */
+.subMenu.bubplastic.blue ul li a:hover,
+.subMenu.bubplastic.blue ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-blue.gif) top left no-repeat;
+}
+.subMenu.bubplastic.blue ul li a:hover span.menu_ar,
+.subMenu.bubplastic.blue ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-blue.gif) top right no-repeat;
+}
+
+
+/* GRAY HOVER */
+.subMenu.bubplastic.gray ul li a:hover,
+.subMenu.bubplastic.gray ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-gray.gif) top left no-repeat;
+}
+.subMenu.bubplastic.gray ul li a:hover span.menu_ar,
+.subMenu.bubplastic.gray ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-gray.gif) top right no-repeat;
+}
+
+
+/* LIME HOVER */
+.subMenu.bubplastic.lime ul li a:hover,
+.subMenu.bubplastic.lime ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-lime.gif) top left no-repeat;
+}
+.subMenu.bubplastic.lime ul li a:hover span.menu_ar,
+.subMenu.bubplastic.lime ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-lime.gif) top right no-repeat;
+}
+
+
+/* ORANGE HOVER */
+.subMenu.bubplastic.orange ul li a:hover,
+.subMenu.bubplastic.orange ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-orange.gif) top left no-repeat;
+}
+.subMenu.bubplastic.orange ul li a:hover span.menu_ar,
+.subMenu.bubplastic.orange ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-orange.gif) top right no-repeat;
+}
+
+
+/* PINK HOVER */
+.subMenu.bubplastic.pink ul li a:hover,
+.subMenu.bubplastic.pink ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-pink.gif) top left no-repeat;
+}
+.subMenu.bubplastic.pink ul li a:hover span.menu_ar,
+.subMenu.bubplastic.pink ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-pink.gif) top right no-repeat;
+}
+
+
+/* PURPLE HOVER */
+.subMenu.bubplastic.purple ul li a:hover,
+.subMenu.bubplastic.purple ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-purple.gif) top left no-repeat;
+}
+.subMenu.bubplastic.purple ul li a:hover span.menu_ar,
+.subMenu.bubplastic.purple ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-purple.gif) top right no-repeat;
+}
+
+
+/* RED HOVER */
+.subMenu.bubplastic.red ul li a:hover,
+.subMenu.bubplastic.red ul li.highlight a {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-red.gif) top left no-repeat;
+}
+.subMenu.bubplastic.red ul li a:hover span.menu_ar,
+.subMenu.bubplastic.red ul li.highlight a span.menu_ar {
+	background: transparent url(../../images/subMenu/bg-bubplastic-h-red.gif) top right no-repeat;
+}
+

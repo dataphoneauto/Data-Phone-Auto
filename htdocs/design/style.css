@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+
+	font: 12pt/1.5em Calibri, Trebuchet MS, inherit, Arial;
+	color: black;
+	width:900px;
+	min-width:800px;
+	min-height:auto;
+	max-height:auto;
+	border:2px solid #CCC;
+	margin-left:auto;
+	margin-right:auto;
+	background: url(../images/route1.jpg) no-repeat 0 0 fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment:fixed;
+}
+
+/* CSS Document */
+
+#logo
+{
+	background-color: white;
+	text-align:center;
+}
+
+img 
+{
+	border: none 0px;
+}
+
+#description
+{
+	padding-left:50px;
+	padding-right:50px;
+	text-align:justify;
+}
+
+#logoSystem
+{
+	text-align:center;
+	opacity:1;
+}
+
+h1
+{
+	padding-bottom:5px;
+	padding-left:80px;
+}
+
+#header{
+	padding-bottom:10px;
+}
+
+/********* Team part **********/
+
+
+#chart_div
+{
+	margin:auto;
+	width:50%;
+	opacity:1;
+}
+
+
+#logoImg 
+{
+	
+}
+
+.fb-like-box
+{
+	background-color:white;opacity:10;
+}
+
+div
+{
+	background-color:#AFAFAF; opacity:0.85;
+}
+
+
+#tableSignUp
+{
+	margin:auto;
+}
+
+#imSignUp{
+	margin-top:15px;
+	text-align: center;
+}
+
+
+h1{
+	padding-top:5px;
+	margin-bottom:10px;
+}
+
+#video {
+	text-align: center;
+}
+
+#footer
+{
+	text-align:center;
+}
+
+
+#formSignIn
+{
+	margin-top:15px;
+	text-align:center;
+}
+
+#formLostPass
+{
+	margin-top:15px;
+	text-align:center;
+}
+.tableLostPass
+{
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+.tableSignIn
+{
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#logoOS
+{
+	 float:left;
+}
+
+#logoECE
+{
+	float:right;
+}
+
+#signIn
+{
+	text-align:center;
+}
+#lostPass
+{
+	text-align:center;
+}
+
+.tweet-fb
+{
+	text-align:center;
+}
+
+.twitter-tweet
+{
+	text-align:center;
+}
+
+.subMenu.bubplastic.vertical.blue
+{
+	opacity:1;
+	position:relative;
+}
+
+/********* Profile part **********/
+
+#profile
+{
+	min-height:189px;
+}
+
+#profile-edit, #profile-delete, #profiledeleteuser, #profile-list
+{
+	margin-top:-27px;
+	margin-left:220px;
+	border:2px solid #FFFFFF;
+}
+
+.profil.edit
+{	
+
+}
+
+.profil.edit.button
+{
+	background: transparent url(../../images/subMenu/bg-bubplastic-button.gif) top left no-repeat;
+	color:white;
+}
+
+#profile-edit-succes
+{
+	text-align:center;
+}
+
+#profile-edit-fail
+{
+	text-align:center;
+}
+
+
+.profile.car
+{
+	margin-top:-27px;
+	margin-left:220px;
+	text-align:center;
+	border:2px solid #FFFFFF;
+}
+
+.profile.car img
+{
+	width:24px;
+	height:24px;
+}
+
+.profil.car
+{
+	margin:auto;
+}
+
+#vin
+{
+	font-weight: bold;
+}
+
+.profil.index
+{
+	margin-top:-27px;
+	margin-left:220px;
+	border:2px solid #FFFFFF;
+}
+
+.profile.car #cars, #cars th, #cars tr, #cars td, #list, #list th, #list tr, #list td
+{
+        margin : 0 auto;
+        border:2px solid #CCC;
+}
+
+#membres{
+	text-align:center;
+}
+#supprimer_membre{
+text-align:center;
+}
+

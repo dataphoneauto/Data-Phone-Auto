@@ -1,0 +1,9 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+        //document.getElementById('chart_div').innerHTML = test;
+        var test = '<?php echo $test; ?>';
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawCarChart);
+</script>
+<div id="refresh"><input id="" class="" type="button" value="Refresh page" onClick="updateWall()" /></div>
+<div id="chart_div" style="width: 900px; height: 500px;"></div>

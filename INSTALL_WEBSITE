@@ -1,0 +1,8 @@
+SITE WEB
+Pr¨¦-requis :
+H¨¦bergeur acceptant la r¨¦¨¦criture des liens (rewriting rules) avec une base de donn¨¦es MySQL (50mo suffisent)
+Proc¨¦dure :
+1) Cr¨¦er une base de donn¨¦es sous le nom "dataphone"
+2) Importer le fichier dataphone.sql (htdocs/database/dataphone.sql), les tables sont d¨¦sormais cr¨¦¨¦es
+3) Ouvrir le fichier config.php (htdocs/model/config.php) et red¨¦finir les variables DSN, DB_USERNAME et DB_PASSWORD correspondant respectivement au DSN de votre base de donnees, a votre identifiant et mot de passe.
+4) Copier le contenu du dossier htdocs sur votre h¨¦bergeur (depuis un client FTP par exemple)

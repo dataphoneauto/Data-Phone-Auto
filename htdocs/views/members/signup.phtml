@@ -1,0 +1,57 @@
+	<div id="">
+		<h1><?php echo $pageInfos['titre']; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<div id="imSignUp">
+		<?php 	
+			if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['email']) && isset($_POST['password'])) {
+				if (($_POST['lastName'] != "") && ($_POST['firstName'] != "") && ($_POST['email'] != "") && ($_POST['password'] != "")) {
+					if ($emailExisting == false) {
+		?>
+			<p>Cet email est invalide, veuillez saisir une adresse email correcte.</p>
+		<?php			}
+					elseif ($member->_idMember == NULL) {
+		?>
+			<p>Votre inscription s'est effectuee avec succes !</p><br />
+			<p>Vous serez redirige dans 5 secondes ...</p><br />
+			<img src='../../images/deco.gif' />
+		<?php
+					}
+					else {
+		?>
+			<p>Cet email est déjà utilisée. Veuillez la changer.<p><br />
+		<?php
+					}
+				}
+				else {
+		?>
+			<p>Veuillez renseigner tous les champs obligatoires.</p>
+		<?php		}
+			}
+		?>
+			<div id=""></div>
+			<form method="post" action="/members/signup" name="formSignUp" onSubmit="">
+				<table id="tableSignUp">
+					<tr>
+						<td><label>Nom* :</label></td>
+						<td><input id="" class="" name="lastName" type="text" onFocus="" onBlur="" /></td>
+					</tr>
+					<tr>
+						<td><label>Pr&eacute;nom* :</label></td>
+						<td><input id="" class="" name="firstName" type="text" onFocus="" onBlur="" /></td>
+					</tr>
+					<tr>
+						<td><label>Email* :</label></td>
+						<td><input id="" class="" name="email" type="text" onFocus="" onBlur="" /></td>
+					</tr>
+					<tr>
+						<td><label>Mot de passe* :</label></td>
+						<td><input id="" class="" name="password" type="password" onFocus="" onBlur="" /></td>
+					</tr>
+				</table>
+				<input id="btnSignUp" class="buttons" type="submit" value="Inscription" />
+				<p>* : Champs obligatoire</p>
+			</form>
+		</div>
+		</div>

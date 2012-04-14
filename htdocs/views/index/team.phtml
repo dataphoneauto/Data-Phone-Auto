@@ -1,0 +1,19 @@
+	<div id="">
+		<!-- TITRE PAGE -->
+		<h1><?php echo $pageInfos['titre']; ?></h1>
+		<!-- FIN TITRE PAGE -->
+		<!-- DESCRIPTION PAGE -->
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<!-- FIN DESCRIPTION PAGE -->
+		<div id="team">
+			<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+			<script type='text/javascript'>
+			      google.load('visualization', '1', {packages:['orgchart']});
+			      google.setOnLoadCallback(drawChart);
+			</script>
+
+			<div id='chart_div'></div>
+		</div>
+	</div>

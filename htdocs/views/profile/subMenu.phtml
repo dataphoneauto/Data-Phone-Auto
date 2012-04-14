@@ -1,0 +1,16 @@
+			<div class="subMenu bubplastic vertical blue">
+				<ul>
+					<li><span class="subMenu menu_r"><a href="edit"><span class="subMenu menu_ar">Editer votre profil</span></a></span></li>
+					<li><span class="subMenu menu_r"><a href="cars"><span class="subMenu menu_ar">Vos voitures</span></a></span></li>
+					<li><span class="subMenu menu_r"><a href="addcar"><span class="subMenu menu_ar">Ajouter une voiture</span></a></span></li>
+					<li><span class="subMenu menu_r"><a href="delete"><span class="subMenu menu_ar">Supprimer une voiture</span></a></span></li>
+                                <?php
+                                        if ($_SESSION['isAdmin'] == true) {
+                                ?>
+					<li><span class="subMenu menu_r"><a href="list"><span class="subMenu menu_ar">Lister les utilisateurs</span></a></span></li>
+				<?php
+                                        }
+                                ?>	
+				</ul>
+				<br class="subMenu clearit" />
+			</div>

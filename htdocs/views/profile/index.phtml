@@ -1,0 +1,21 @@
+	<div id="">
+		<h1><?php echo $title; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<div id="profile">
+			<?php	if (isset($_SESSION['connected'])) {
+					require_once 'subMenu.phtml';
+			?>
+			<?php
+				}
+				else {
+			?>
+			<p>Vous devez etre connecte pour acceder a cette page.</p>
+			<p>Vous serez redirige dans 5 secondes ...</p>
+			<img id="disconnect" src='../../images/deco.gif' />
+			<?php
+				}
+			?>
+		</div>
+	</div>

@@ -1,0 +1,145 @@
+	<div id="">
+		<h1><?php echo $title; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<div id="profile">
+			<?php	if (isset($_SESSION['connected'])) {
+					require_once 'subMenu.phtml';
+					?>
+	
+					<div class="profile car">
+					<?php
+						if (isset($_GET['page'])) {
+							// Page > 0
+							if ($_GET['page'] > 0) {
+					?>
+						<table id="cars">
+							<tr>
+                                                                <th>Immatriculation</th>
+                                                                <th>Mod&egrave;le</th>
+                                                                <th>Ann&eacute;e</th>
+                                                        </tr>
+                                                        <tr>
+                                                                <td><?php echo $cars[$_GET['page']-1]['idVoiture']; ?></td>
+                                                                <td><?php echo $cars[$_GET['page']-1]['modele']; ?></td>
+                                                                <td><?php echo $cars[$_GET['page']-1]['annee']; ?></td>
+                                                        </tr>
+						</table>
+						<br /><p id="vin">Num&eacute;ro VIN (Vehicule Identification Number) :<br />
+					<?php			//$data = split(";", $carData[0]['donnees']);
+								//foreach ($data as $datum)
+									//echo $datum . '<br />';
+						//$allGraphData['0902']
+						if ($tmpVin != "")
+							echo $tmpVin;
+						else	echo "Num&eacute;ro non trouv&eacute;";
+					?>
+						</p>
+						<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+						<script type="text/javascript">
+							<?php echo php2js($allGraphInfos, "allGraphInfos"); ?>
+							<?php echo php2js($allGraphData, "allGraphData"); ?>
+							<?php echo php2js($allGraphDate, "allGraphDate"); ?>
+							<?php echo php3js($allGraphInfos, "nbAllGraphInfos"); ?>
+							<?php echo php3js($allGraphData, "nbAllGraphData"); ?>
+							//var test = '<?php echo $test; ?>';
+							//var titre = "<?php echo $pidObd2['0101']['description']; ?>";
+							google.load("visualization", "1", {packages:["corechart"]});
+							google.setOnLoadCallback(drawCarChart);
+						</script>
+						<!--<div id="refresh"><input id="" class="" type="button" value="Refresh page" onClick="updateWall()" /></div>-->
+						<br />
+						<div id="graph">
+						<div id="chart_div1"></div>
+						<div id="chart_div2"></div>
+						<div id="chart_div3"></div>
+						<div id="chart_div4"></div>
+						<div id="chart_div5"></div>
+						<div id="chart_div6"></div>
+						<div id="chart_div7"></div>
+						<div id="chart_div8"></div>
+						<div id="chart_div9"></div>
+						<div id="chart_div10"></div>
+						<div id="chart_div11"></div>
+						<div id="chart_div12"></div>
+						<div id="chart_div13"></div>
+						<div id="chart_div14"></div>
+						<div id="chart_div15"></div>
+						<div id="chart_div16"></div>
+						<div id="chart_div17"></div>
+						<div id="chart_div18"></div>
+						<div id="chart_div19"></div>
+						<div id="chart_div20"></div>
+						<div id="chart_div21"></div>
+						<div id="chart_div22"></div>
+						<div id="chart_div23"></div>
+						<div id="chart_div24"></div>
+						<div id="chart_div25"></div>
+						<div id="chart_div26"></div>
+						<div id="chart_div27"></div>
+						<div id="chart_div28"></div>
+						<div id="chart_div29"></div>
+						<div id="chart_div30"></div>
+						</div>
+						<a href="cars" ><img src="../../images/previousNext/all.png" alt="allCar" /></a>
+					<?php
+								// Page = 1
+								if ($_GET['page'] == 1) {
+					?>
+						<a href="?page=<?php echo ($_GET['page']+1); ?>" id="nextCar"><img src="../../images/previousNext/nextCarBlack.png" alt="nextCar" /></a>
+						<a href="?page=<?php echo count($cars); ?>" id="lastCar"><img src="../../images/previousNext/lastCarBlack.png" alt="lastCar" /></a>
+					<?php			}
+								// Page < nb voitures
+								elseif ($_GET['page'] < count($cars)) {
+					?>
+						<a href="?page=1" id="firstCar"><img src="../../images/previousNext/firstCarBlack.png" alt="firstCar" /></a>
+						<a href="?page=<?php echo ($_GET['page']-1); ?>" id="previousCar"><img src="../../images/previousNext/previousCarBlack.png" alt="previousCar" /></a>
+						<a href="?page=<?php echo ($_GET['page']+1); ?>" id="nextCar"><img src="../../images/previousNext/nextCarBlack.png" alt="nextCar" /></a>
+						<a href="?page=<?php echo count($cars); ?>" id="lastCar"><img src="../../images/previousNext/lastCarBlack.png" alt="lastCar" /></a>
+					<?php			}
+								// Page = nb voitures
+								else {
+					?>
+						<a href="?page=1"><img src="../../images/previousNext/firstCarBlack.png" alt="firstCar" /></a>
+						<a href="?page=<?php echo ($_GET['page']-1); ?>"><img src="../../images/previousNext/previousCarBlack.png" alt="previous" /></a>
+					<?php			}
+							}
+						}
+						// $_GET['page'] inexistant
+						else {
+					?>
+                                                <table id="cars">
+                                                        <caption>R&eacute;capitulatif des voitures</caption>
+                                                        <tr>
+                                                                <th>Immatriculation</th>
+                                                                <th>Mod&egrave;le</th>
+                                                                <th>Ann&eacute;e</th>
+                                                        </tr>
+                                        <?php           for ($i = 0; $i < count($cars); $i++) {
+                                        ?>
+                                                        <tr>
+                                                                <td><a href="?page=<?php echo $i+1; ?>"><?php echo $cars[$i]['idVoiture']; ?></a></td>
+                                                                <td><?php echo $cars[$i]['modele']; ?></td>
+                                                                <td><?php echo $cars[$i]['annee']; ?></td>
+                                                        </tr>
+					<?php
+							}
+					?>
+                                                </table>
+						<a href="cars" ><img src="../../images/previousNext/all.png" alt="allCar" /></a>
+						<a href="?page=<?php echo ($_GET['page']+1); ?>"><img src="../../images/previousNext/nextCarBlack.png" alt="next" /></a>
+						<a href="?page=<?php echo count($cars); ?>"><img src="../../images/previousNext/lastCarBlack.png" alt="lastCar" /></a>	
+					<?php
+						}
+				}
+				else {
+				?>
+				<p>Vous devez etre connecte pour acceder a cette page.</p>
+				<p>Vous serez redirige dans 5 secondes ...</p>
+				<img id="disconnect" src='../../images/deco.gif' />
+				<?php
+					}
+				?>
+			</div>
+		</div>

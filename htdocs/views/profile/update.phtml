@@ -1,0 +1,25 @@
+		<?php
+			if ($existUpdate > 0) {
+		?>
+			<h2>Ses nouveaux statuts</h2>
+			<table class="trois_freres">
+				<tr>
+					<th>Date</th>
+					<th>Statut</th>
+					<th>Service</th>
+				</tr>
+		<?php
+				foreach ($updates as $update) {
+		?>
+				<tr>
+					<td><?php echo $update['date'];?></td>
+					<td><?php echo $update['content'];?></td>
+					<td><?php echo $update['service'];?></td>
+				</tr>
+		<?php
+				}
+		?>
+			</table><br />
+		<?php
+			}
+		?>

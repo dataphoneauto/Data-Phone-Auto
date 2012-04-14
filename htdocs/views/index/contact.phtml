@@ -1,0 +1,70 @@
+	<?php
+		//if ($fail == true) {
+	?>
+	<!--<p id="try_connect">Pseudo et/ou mot de passe incorrect(s).</p>-->
+	<?php
+		//}
+	?>	
+	
+<div id="fb-root">
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id; 
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<div id="contact">
+		<!-- TITRE PAGE -->
+		<h1><?php echo $pageInfos['titre']; ?></h1>
+		<!-- FIN TITRE PAGE -->
+		<!-- DESCRIPTION PAGE -->
+		<div id="description">
+			<p>
+				<?php echo $pageInfos['description']; ?>
+			</p>
+		</div>	
+	</div>
+
+<div class="tweet-fb">
+
+<blockquote class="twitter-tweet tw-align-center" lang="fr">
+<p>Pensez à devenir <a href="https://twitter.com/search/%2523fan">#fan</a> de notre <a href="https://twitter.com/search/%2523projet">#projet</a> sur FaceBook! <a href="https://twitter.com/search/%2523opensource">#opensource</a> <a href="https://twitter.com/search/%2523stylé">#stylé</a> <a href="http://t.co/i9sMjt6V" title="http://www.facebook.com/DataPhoneAuto">facebook.com/DataPhoneAuto</a></p>&mdash; DataPhoneAuto (@DataPhoneAuto) <a href="https://twitter.com/DataPhoneAuto/status/178137015416659968" data-datetime="2012-03-09T15:15:48+00:00">Mars 9, 2012</a></p></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/DataPhoneAuto" data-width="255" data-show-faces="true" data-stream="true" data-header="false"></div>
+<!---<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#cfaecf',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ba9bba',
+      color: '#000000',
+      links: '#036785'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('DataPhoneAuto').start();
+</script>-->
+</div>
+</div>
+
+		<!-- FIN DESCRIPTION PAGE -->
+	
+
+

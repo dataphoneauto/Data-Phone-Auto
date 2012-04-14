@@ -1,0 +1,2 @@
+*/20 sec * * * * /sbin/sh /root/synchro/ecesynchrodata.sh
+*/1 * * * * /usr/bin/crontab /var/www/config/configcron.txt

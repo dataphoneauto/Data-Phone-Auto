@@ -1,0 +1,68 @@
+	<div id="">
+		<h1><?php echo $pageInfos['titre']; ?> - <?php echo $_SESSION['lastName']; ?> <?php echo $_SESSION['firstName']; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<div id="profile">
+		<?php 	
+			if (isset($_SESSION['connected']) && ($_SESSION['isAdmin'] == 1)) {
+			require_once 'subMenu.phtml';
+		?>
+		
+		        <div id="profile-list">
+				<?php
+			if (isset($_POST['idMember']))
+			{
+		?>
+						<p>Membre supprime avec succes !</p><br />
+						<p>Vous serez redirige dans 5 secondes ...</p><br >
+						<img src='../../images/deco.gif' />
+		<?php
+			}	
+		?>
+			        <table id="list">
+			                <caption>Liste des membres</caption>
+				        <tr>
+					        <th>ID</th>
+					        <th>Nom</th>
+					        <th>Pr&eacute;nom</th>
+					        <th>email</th>
+					        <th>Administrateur</th>
+							<th>Supprimer</th>
+				        </tr><form action="list" method="POST">
+                                       <?php
+                                                for ($i = 0; $i < count($pageMember); $i++) {
+                                        ?>
+                                                <tr>
+                                                        <td><?php echo $pageMember[$i]['idMembre']; ?></td>
+                                                        <td><?php echo $pageMember[$i]['nom']; ?></td>
+                                                        <td><?php echo $pageMember[$i]['prenom']; ?></td>
+                                                        <td><?php echo $pageMember[$i]['email']; ?></td>
+                                                        <td><?php if($pageMember[$i]['isAdmin']==1)
+                                                                        echo 'oui';
+                                                                        else
+                                                                        echo 'non';; ?></td>
+														<td><input type="radio" name="idMember" value="<?php echo $pageMember[$i]['idMembre']; ?>"></td>
+                                                </tr>
+				        <?php
+					        }
+				        ?>
+						
+					</table>
+					<input id="supprimer_membre" class="boutons" type="submit" value="Supprimer" />
+						</form>
+					
+     
+		<?php
+			}
+			else {
+		?>
+			<p>Vous devez etre admin pour acceder a cette page.</p><br />
+			<p>Vous serez redirige dans 5 secondes ...</p><br >
+			<img src='../../images/deco.gif' />
+		<?php
+			}
+		?>
+			</div>  
+		</div>
+	</div>

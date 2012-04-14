@@ -1,0 +1,89 @@
+	<div id="">
+		<h1><?php echo $title; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<?php	if (isset($_SESSION['connected'])) { ?>
+		<div id="profile">
+			<?php require_once 'subMenu.phtml'; ?>
+			<div id="profile-edit">
+				<?php
+				if (isset($_POST['email']) && isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['password'])) {
+					echo "test1";
+					if($_POST['email']=="") {
+				        ?>
+				        <p id="profile-edit-fail">Veuillez saisir un email.</p><br />
+				        <?php
+					}
+					elseif($member->_idMember =! NULL) {
+				        ?>
+						<p id="profile-edit-fail">Cet email est d&eacute;j&agrave; utilis&eacute;.</p><br />
+				        <?php
+					}
+					elseif($checkEmail==false) {
+				        ?>
+						 <p id="profile-edit-fail">Cet email n'est pas valide !</p><br />
+				        <?php
+					}
+				        elseif($_POST['lastName'] == "") {
+				        ?>
+						 <p id="profile-edit-fail">Veuillez entrer un nom !</p><br />
+				        <?php
+					}
+					elseif($_POST['firstName'] == "") {
+				        ?>
+						 <p id="profile-edit-fail">Veuillez entrer un pr&eacute;nom !</p><br />
+				        <?php
+					}
+					elseif($_POST['password'] == "") {
+				        ?>
+						 <p id="profile-edit-fail">Veuillez entrer un mot de passe !</p><br />
+				        <?php
+					}
+					else {
+				        ?>
+						 <p id="profile-edit-succes">Membre modifi&eacute; avec succ&eagrave;s !</p><br />
+				        <?php
+					}
+				}
+				?>
+				<form method="post" action="edit">
+					<table class="profil edit">
+						<tr>
+							<td><label for="email">Email :</label></td>
+							<td><input class="" id="email" name="email" type="text" value="<?php echo $_SESSION['email']; ?>" /></td>
+						</tr>
+						<tr>
+							<td><label for="nom">Nom :</label></td>
+							<td><input class="" id="nom" name="lastName" type="text" value="<?php echo $member->_lastName; ?>" /></td>
+						</tr>
+						<tr>
+							<td><label for="prenom">Prenom :</label></td>
+							<td><input class="" id="prenom" name="firstName" type="text" value="<?php echo $member->_firstName; ?>" /></td>
+						</tr>
+						<tr>
+							<td><label for="pass">Pass :</label></td>
+							<td><input class="" id="pass" name="password" type="password" value="" /></td>
+						</tr>
+					
+					</table>
+					<table class="profil edit">
+						<tr>
+							<td><input id="" class="profil edit button" type="submit" value="Editer" /></td>
+						</tr>
+					</table>			
+				</form>
+			</div>
+
+		<?php
+			}
+			else {
+		?>
+			<p>Vous devez etre connecte pour acceder a cette page.</p>
+			<p>Vous serez redirige dans 5 secondes ...</p>
+			<img id="disconnect" src='../../images/deco.gif' />
+		<?php
+			}
+		?>
+		</div>
+	</div>

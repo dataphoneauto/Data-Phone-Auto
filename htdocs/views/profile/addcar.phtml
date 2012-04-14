@@ -1,0 +1,93 @@
+	<div id="">
+		<h1><?php echo $title; ?></h1>
+		<div id="description">
+			<p><?php echo $pageInfos['description']; ?></p>
+		</div>
+		<?php	if (isset($_SESSION['connected'])) { ?>
+		<div id="profile">
+			<?php require_once 'subMenu.phtml'; ?>
+			<div id="profile-edit">
+				<?php
+				if (isset($_POST['brandt']) && isset($_POST['model']) && isset($_POST['licensePlate']) && isset($_POST['year'])) {
+				
+					if($_POST['licensePlate']==""){
+				?>			
+				        <p id="plate-add-fail">Veuillez entrer l'immatriculation.</p><br />
+				<?php
+					}
+					elseif($_POST['model']==""){
+				?>			
+				        <p id="model-add-fail">Veuillez entrer le mod&egrave;le.</p><br />
+				<?php
+					}
+					elseif($_POST['year']==NULL){
+				?>			
+				        <p id="year-add-fail">Veuillez entrer l'ann&eacute;e.</p><br />
+				
+				<?php
+					}
+					elseif($car->_licensePlate==NULL){
+								
+				?>
+				        <p id="car-add-succes">Voiture ajout&eacute;e avec succ&egrave;s !</p><br />
+				
+				<?php
+					}
+					else
+					{
+				?>
+				        <p id="car-add-succes">Voiture d&eacute;j&agrave; enregistr&eacute;e !</p><br />
+				<?php
+					}
+				}
+				?>
+				
+				<form method="post" action="addcar">
+					<table class="">
+						<tr>
+							<td><label>Marque :</label></td>
+							<td><select name="brandt">
+								<?php foreach ($allBrandts as $brandt) { ?>
+								<option value="<?php echo $brandt['constructeur']; ?>"><?php echo $brandt['constructeur']; ?></option>
+								<?php } ?>
+							</select></td>
+						</tr>
+						<tr>
+							<td><label for="model">Modèle :</label></td>
+							<td><input class="" id="model" name="model" type="text" value="<?php echo $member->_lastName; ?>" /></td>
+						</tr>
+						<tr>
+							<td><label for="licensePlate">Immatriculation :</label></td>
+							<td><input class="" id="licensePlate" name="licensePlate" type="text" value="<?php echo $member->_firstName; ?>" /></td>
+						</tr>
+						<tr>
+							<td><label>Année :</label></td>
+							<td><select name="year">
+								<option value=""></option>
+								<?php for($i = $newestYear; $i > $oldestYear ; $i--) { ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+								<?php } ?>
+							</select></td>
+						</tr>
+					
+					</table>
+					<table class="">
+						<tr>
+							<td><input id="" class="" type="submit" value="Ajouter" /></td>
+						</tr>
+					</table>			
+				</form>
+			</div>
+
+		<?php
+			}
+			else {
+		?>
+			<p>Vous devez etre connecte pour acceder a cette page.</p>
+			<p>Vous serez redirige dans 5 secondes ...</p>
+			<img id="disconnect" src='../../images/deco.gif' />
+		<?php
+			}
+		?>
+		</div>
+	</div>

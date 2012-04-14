@@ -1,0 +1,155 @@
+Installation du module embarqu?dans la voiture
+
+##########################################################################################################
+##########################################################################################################
+Materiel
+	- GuruPlug serveur
+	- Prise USB-OBD2 avec un ELM327
+	- Modem 3G (téléphone portable en USB)
+	- Carte SD > 4 Go
+##########################################################################################################
+##########################################################################################################
+	
+Installation
+##########################################################################################################
+##configuration u-boot du GuruPlug
+
+#configuration par defaut
+	ethact=egiga0
+	ethaddr=02:50:43:15:e7:e8
+	eth1addr=02:50:43:a7:de:7f
+	x_bootargs=console=ttyS0,115200 loglevel=7
+	x_bootcmd_usb=usb start
+	x_bootcmd_kernel=nand read.e 0x6400000 0x100000 0x400000
+	x_bootargs_root=ubi.mtd=2 root=ubi0:rootfs rootfstype=ubifs
+	run=x_bootcmd
+	x_bootcmd=$(x_bootcmd_usb); $(x_bootcmd_kernel); setenv bootargs $(x_bootargs) $(x_bootargs_root) ;bootm 0x6400000;
+
+	stdin=serial
+	stdout=serial
+	stderr=serial
+
+#setenv ?ajouter
+	bootcmd=run usb_boottest
+	usb_boottest=$(x_bootcmd_usb); $(x_bootcmd_kernel); setenv bootargs $(x_bootargs) $(usb_root); bootm 0x6400000;
+	usb_root=rootfstype=ext2 root=/dev/sdb1 rw rootwait
+	usb_kernel=fatload usb 1 0x6400000 /uImage-guruplug
+	mainlineLinux=yes
+	arcNumber=2097
+	usb_boot=$(x_bootcmd_usb); $(usb_kernel); setenv bootargs $(x_bootargs) $(usb_root); bootm 0x6400000;
+
+filesize=29064C
+##########################################################################################################
+#installation du rootfs sur la microSD
+
+http://www.plugcomputer.org/plugforum/index.php?topic=1642.15
+1) My guruplug server plus recognizes the microSD as /dev/sdb, prepare microSD as:
+  You must format microSD ext2 format whit your PC or guru
+  
+  #fdisk /dev/sdb
+   press "o"  / create a new partition table
+   press "n"  / create a new partition
+   press "p"  / it's a primary partition
+   press "1"  / partition #1
+   press enter / default first cylinder
+   press enter / default last cylinder
+   press "a"  / set the boot flag
+   press "1" / ... for partition #1
+   press "w" / save changes
+   
+$mkfs -t  ext2 /dev/sdb1
+$mkdir /mnt/sdcard
+$mount /dev/sdb1 /mnt/sdcard
+
+2) copy files of Guruplug into microSD as:
+$cp -axv / /mnt/sdcard
+$cp -av /dev /mnt/sdcard
+ By about two steps, the bootable microSD is available
+
+
+****** AUTRE METHODE DEPUIS UN PC **************
+
+copier l'archive roofsGuruXX sur la SD  généralement /dev/sdb1
+
+puis extraire en admin l'archive
+	#tar -xvf archive.tar 
+puis supprimer l'archive de la SD
+	rm roofsGuru1.x
+
+####################################################################################
+#config networking 3g dans le GuruPlug
+editer le fichier /etc/network/interfaces
+
+$nano /etc/network/interfaces
+	add :
+		allow-hotplug usb0
+		iface usb0 inet dhcp
+
+pour tester la connexion brancher le téléphone sur un port USB et configurer
+le téléphone en modem 3G par USB
+
+puis tester de faire un ping ur google pour vérifier la connectivit?
+	ping google.fr
+####################################################################################
+Serveur web embarqu?pour configurer le Guru facilement
+
+#installer serveur apache et php5
+	$apt-get install apache2 php5 php5-curl 
+
+#enlever lighthttpd du demarrage des processus
+	$ update-rc.d -f lighttpd remove
+####################################################################################
+Le serveur web dois utiliser des fonctions système utilisable uniquement en root,
+il faut donc ajouter les droits ?l'utilisateur www-data
+
+#Executer des fonctions avec les droits "root"
+
+#execution de shutdown par user www-data
+ajout d'un groupe systemfunction qui contiendra toutes les outils systems
+	$groupadd systemfunction
+	$gpasswd -a www-data systemfunction
+	
+	$chgrp systemfunction /sbin/shutdown
+	$chmod +s /sbin/shutdown
+	
+	puis ajouter dans 
+	nano /etc/sudoers
+	
+	# User privilege specification
+	www-data ALL=(ALL) NOPASSWD:/sbin/shutdown
+
+#execution de php5 par user www-data
+	
+	$chgrp systemfunction /usr/bin/php5
+	$chmod +s /usr/bin/php5
+	
+	puis ajouter dans 
+	nano /etc/sudoers
+	
+	# User privilege specification
+	www-data ALL=(ALL) NOPASSWD:/usr/bin/php5
+
+####################################################################################
+# instalLation d'un utilitaire utilis?dans le code php pour lire les données de la 
+voiture avec le prise OBD2 par le port serial
+	$apt-get install setserial
+####################################################################################
+####################################################################################
+A ce stade, le GuruPlug est pret ?recevoir le code qu'il va executer pout lire les 
+informations de la voiture et les envoyer sur le serveur dataphoneauto.ece.fr
+####################################################################################
+####################################################################################
+tout le code doit être copier dans le dossier /var/www/. du GuruPlug
+	exemple de copie du code depuis un ordinateur en reseau
+	$rsync --partial --progress -r -e "ssh -p 22" login@adressesource:/repertoir_du_projet/ /var/www/
+####################################################################################
+####################################################################################
+Utilisation
+	configutration du guru
+		pour configurer le guruplug il faut
+		- être connecter en wifi avec le smartphone
+		- ouvrire une browser internet et saisir l'URL http://192.168.1.1
+		- login/pass par defaut : admin/root
+		
+		une fois l'application lancée, il faut couper le wifi et activer le modem 3G USB
+		

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+    <title>DataPhoneAuto Mobile</title>
+    <link rel="stylesheet"
+href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+    <script type="text/javascript"
+src="http://code.jquery.com/jquery-1.4.3.min.js">
+</script>		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript"
+src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js">
+</script>
+</head>
+
+
+<body>
+ 
+<div data-role="page">
+    <div data-role="header">
+        <h1>Supprimer une voiture</h1>
+    </div><!-- /entete -->
+ 
+    <div data-role="content"> 
+
+
+<div id="profile-delete">
+				<?php
+					if (isset($_POST['car'])) {
+				?>
+				<p id="profile-delete-succes">Voiture supprim&eacute;e avec succ&egrave;s !</p><br />
+				<?php
+					}
+				?>
+				<form method="post" action="delete">
+					<table class="">
+						<tr>
+							<?php	if(sizeof($cars) > 0) { ?>
+							<td><label>Selectionnez la voiture que vous desirez supprimer :</label></td>
+							<td><select name="car">
+								<?php foreach ($cars as $car) { ?>
+								<option value="<?php echo $car['idVoiture']; ?>"><?php echo $car['idVoiture']; ?></option>
+								<?php } ?>
+							</select></td>
+							<?php	}
+								else {
+							?>
+							<td><label>Vous ne possedez pas de voiture.</label></td>
+							<?php	} ?>
+						</tr>
+					</table>
+					<table class="">
+						<tr>
+							<td><input id="" class="" type="submit" value="Supprimer" /></td>
+						</tr>
+					</table>			
+				</form>
+			</div>
+		<?php
+			}
+			else {
+		?>
+			<p>Vous devez etre connecte pour acceder a cette page.</p>
+			<p>Vous serez redirige dans 5 secondes ...</p>
+			<img id="disconnect" src='../../images/deco.gif' />
+		<?php
+			}
+		?>
+		</div>
+   
+
+</div><!-- /contenu -->
+ 
+    <div data-role="footer">
+        <h4></h4>
+    </div><!-- /footer -->
+</div><!-- /Fin de la page -->
+ 
+</body>
+</html>
