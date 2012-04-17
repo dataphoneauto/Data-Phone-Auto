@@ -5,7 +5,7 @@ Installation du module embarqu?dans la voiture
 Materiel
 	- GuruPlug serveur
 	- Prise USB-OBD2 avec un ELM327
-	- Modem 3G (téléphone portable en USB)
+	- Modem 3G (tï¿½lï¿½phone portable en USB)
 	- Carte SD > 4 Go
 ##########################################################################################################
 ##########################################################################################################
@@ -69,7 +69,7 @@ $cp -av /dev /mnt/sdcard
 
 ****** AUTRE METHODE DEPUIS UN PC **************
 
-copier l'archive roofsGuruXX sur la SD  généralement /dev/sdb1
+copier l'archive roofsGuruXX sur la SD  gï¿½nï¿½ralement /dev/sdb1
 
 puis extraire en admin l'archive
 	#tar -xvf archive.tar 
@@ -85,10 +85,10 @@ $nano /etc/network/interfaces
 		allow-hotplug usb0
 		iface usb0 inet dhcp
 
-pour tester la connexion brancher le téléphone sur un port USB et configurer
-le téléphone en modem 3G par USB
+pour tester la connexion brancher le tï¿½lï¿½phone sur un port USB et configurer
+le tï¿½lï¿½phone en modem 3G par USB
 
-puis tester de faire un ping ur google pour vérifier la connectivit?
+puis tester de faire un ping ur google pour vï¿½rifier la connectivit?
 	ping google.fr
 ####################################################################################
 Serveur web embarqu?pour configurer le Guru facilement
@@ -99,7 +99,7 @@ Serveur web embarqu?pour configurer le Guru facilement
 #enlever lighthttpd du demarrage des processus
 	$ update-rc.d -f lighttpd remove
 ####################################################################################
-Le serveur web dois utiliser des fonctions système utilisable uniquement en root,
+Le serveur web dois utiliser des fonctions systï¿½me utilisable uniquement en root,
 il faut donc ajouter les droits ?l'utilisateur www-data
 
 #Executer des fonctions avec les droits "root"
@@ -130,7 +130,7 @@ ajout d'un groupe systemfunction qui contiendra toutes les outils systems
 	www-data ALL=(ALL) NOPASSWD:/usr/bin/php5
 
 ####################################################################################
-# instalLation d'un utilitaire utilis?dans le code php pour lire les données de la 
+# instalLation d'un utilitaire utilis?dans le code php pour lire les donnï¿½es de la 
 voiture avec le prise OBD2 par le port serial
 	$apt-get install setserial
 ####################################################################################
@@ -139,7 +139,10 @@ A ce stade, le GuruPlug est pret ?recevoir le code qu'il va executer pout lire l
 informations de la voiture et les envoyer sur le serveur dataphoneauto.ece.fr
 ####################################################################################
 ####################################################################################
-tout le code doit être copier dans le dossier /var/www/. du GuruPlug
+tout le code doit ï¿½tre copier dans le dossier /var/www/. du GuruPlug
+# installation de rsync
+	$apt-get install rsync
+
 	exemple de copie du code depuis un ordinateur en reseau
 	$rsync --partial --progress -r -e "ssh -p 22" login@adressesource:/repertoir_du_projet/ /var/www/
 ####################################################################################
@@ -147,9 +150,9 @@ tout le code doit être copier dans le dossier /var/www/. du GuruPlug
 Utilisation
 	configutration du guru
 		pour configurer le guruplug il faut
-		- être connecter en wifi avec le smartphone
+		- ï¿½tre connecter en wifi avec le smartphone
 		- ouvrire une browser internet et saisir l'URL http://192.168.1.1
 		- login/pass par defaut : admin/root
 		
-		une fois l'application lancée, il faut couper le wifi et activer le modem 3G USB
+		une fois l'application lancï¿½e, il faut couper le wifi et activer le modem 3G USB
 		
