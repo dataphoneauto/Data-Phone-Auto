@@ -1,4 +1,26 @@
-Pour utiliser notre application, il faut mettre en oeuvre un site web et configurer le guruplug.
+[Data Phone Auto](http://dataphoneauto.ece.fr/) - Diagnostiquez votre voiture à distance
+========================================================================================
+
+
+Comment utiliser notre application ?
+------------------------------------
+
 Veuillez prendre note des fichiers suivants :
-Site web : voir le fichier INSTALL_WEBSITE
-Guruplug : voir le fichier INSTALL_GURUPLUG
+- Site web : voir le fichier INSTALL_WEBSITE
+- Guruplug : voir le fichier INSTALL_GURUPLUG
+
+
+[Licence] (https://github.com/dataphoneauto/Data-Phone-Auto/wiki/_preview)
+-------
+
+Nous avons choisi de distribuer notre logiciel libre sous licence publique général [GNU (GNU GPL)] (). Le choix s’est porté vers cette licence car elle met en œuvre la notion de copyleft dont l’objectif est de de garantir les droits des utilisateurs et vise à préserver la liberté d’utiliser, d’étudier  et de modifier le logiciel. Cette licence est également la plus utilisée dans le logiciel libre avec près de 70% des projets.  Enfin, la GNU GPL présente quatre objectifs :
+- Liberté d’exécuter le logiciel pour n’importe quel usage
+- Liberté d’étudier le fonctionnement du programme et de l’adapter à ses besoins
+- Liberté de redistribuer des copies
+- Liberté d’accéder aux versions modifiées
+
+
+Nous contacter
+--------------
+
+Si vous avez des questions ou des suggestions à nous faire parvenir, envoyez-nous un email à dataphoneauto@free.fr
